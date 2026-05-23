@@ -6,7 +6,6 @@
 }
 
 body {
-    /* Background abu-abu gelap merepresentasikan area luar poster */
     background-color: #2b2b2b; 
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -30,9 +29,6 @@ body {
 
 /* --- HEADER --- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 40px;
 }
 
@@ -42,34 +38,6 @@ body {
     line-height: 0.9;
     color: #222;
     letter-spacing: -2px;
-}
-
-.sponsor {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.sponsor p {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #222;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.arrow-icon {
-    width: 45px;
-    height: 45px;
-    border: 3px solid #222;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #222;
 }
 
 /* --- EVENT DETAILS --- */
