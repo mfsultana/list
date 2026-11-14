@@ -6,7 +6,6 @@
     <title>Deep Talk Rundown - Firdaus & Virda</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,9 +17,9 @@
     </video>
     <div class="video-overlay"></div>
 
+    <!-- Layar Intro -->
     <div id="intro-screen" class="intro-container">
         <div class="intro-card">
-            
             <div class="photo-frame">
                 <img src="S&V.jpeg" alt="Foto Kami">
             </div>
@@ -32,23 +31,23 @@
                 <button id="btn-masuk" class="btn-masuk">Lihat Rundown</button>
                 <button id="btn-full-video" class="btn-full">Lihat Video Full</button>
             </div>
-
         </div>
     </div>
 
-    <!-- Modal / Fullscreen Video Container (Opsional untuk tombol lihat video full) -->
+    <!-- Modal Video Full -->
     <div id="video-modal" class="video-modal hidden">
         <div class="modal-content">
             <span id="close-modal" class="close-btn">&times;</span>
             <video controls id="modal-video">
                 <source src="video-kalian.mp4" type="video/mp4">
+                Browser Anda tidak mendukung pemutaran video.
             </video>
         </div>
     </div>
 
+    <!-- Layar Rundown Poster -->
     <div id="rundown-screen" class="poster-container hidden">
         <div class="poster-card">
-            
             <header class="header">
                 <div class="title">
                     <h1>Rundown<br>Deep Talk</h1>
@@ -83,7 +82,6 @@
                 <span>Muhammad Firdaus Sultana</span>
                 <span>Virda Wati</span>
             </footer>
-
         </div>
     </div>
 
