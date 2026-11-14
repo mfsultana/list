@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
     const modalVideo = document.getElementById('modal-video');
 
-    // Transisi Tombol Masuk
+    // Transisi Tombol Masuk (Intro -> Rundown)
     if (btnMasuk && introScreen && rundownScreen) {
         btnMasuk.addEventListener('click', () => {
             introScreen.classList.add('fade-out');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Membuka Modal Video Full
+    // Membuka Modal Video Full saat Teks/Font Diklik
     if (btnFullVideo && videoModal && modalVideo) {
         btnFullVideo.addEventListener('click', () => {
             videoModal.classList.remove('hidden');
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Menutup Modal jika mengklik area gelap di luar video
+    // Menutup Modal jika mengklik area gelap di luar kotak video
     if (videoModal && modalVideo) {
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
