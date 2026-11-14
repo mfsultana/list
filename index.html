@@ -11,6 +11,13 @@
 </head>
 <body>
 
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="VID-20260419-WA0027.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video HTML5.
+    </video>
+    <div class="video-overlay"></div>
+
     <div id="intro-screen" class="intro-container">
         <div class="intro-card">
             
@@ -21,8 +28,21 @@
             <h2>Are You Ready?</h2>
             <p>Firdaus & Virda</p>
 
-            <button id="btn-masuk" class="btn-masuk">Lihat Rundown</button>
+            <div class="button-group">
+                <button id="btn-masuk" class="btn-masuk">Lihat Rundown</button>
+                <button id="btn-full-video" class="btn-full">Lihat Video Full</button>
+            </div>
 
+        </div>
+    </div>
+
+    <!-- Modal / Fullscreen Video Container (Opsional untuk tombol lihat video full) -->
+    <div id="video-modal" class="video-modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <video controls id="modal-video">
+                <source src="video-kalian.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 
