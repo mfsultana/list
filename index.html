@@ -18,10 +18,9 @@
     </video>
     <div class="video-overlay"></div>
 
-    <!-- Layar Intro (Posisi di Tengah) -->
+    <!-- 1. LAYAR INTRO -->
     <div id="intro-screen" class="intro-container">
         <div class="intro-wrapper">
-            <!-- Kotak Kartu Utama -->
             <div class="intro-card">
                 <div class="photo-frame">
                     <img src="IMG-20260419-WA0016.jpg" alt="Foto Kami">
@@ -32,7 +31,6 @@
                 <button id="btn-masuk" class="btn-masuk">Lihat Rundown</button>
             </div>
 
-            <!-- Tombol Teks Video di Bawah Kartu (Tengah) -->
             <div id="btn-full-video" class="interactive-video-text">
                 <span class="play-icon">▶</span>
                 <span class="text-glow">Lihat Video Full</span>
@@ -53,36 +51,7 @@
         </div>
     </div>
 
-    <!-- Modal Rekomendasi Smart Game & Deep Talk -->
-    <div id="ide-modal" class="video-modal hidden">
-        <div class="modal-box ide-modal-box">
-            <span id="close-ide-modal" class="close-btn">&times;</span>
-            <div class="ide-content">
-                <h2>🎮 Smart Game & 💬 Deep Talk</h2>
-                
-                <div class="ide-section">
-                    <h3>Rekomendasi Smart Game</h3>
-                    <ul>
-                        <li><strong>Trivia Hubungan:</strong> Tebak 5–10 fakta tentang satu sama lain. Yang kalah wajib menuruti 1 permintaan kecil.</li>
-                        <li><strong>Tebak Kata / Charades Kilat:</strong> Tebak kata lewat gerakan tanpa suara secara bergantian.</li>
-                        <li><strong>Kuis Fun Facts:</strong> Saling lempar teka-teki logika pendek atau pengetahuan unik.</li>
-                    </ul>
-                </div>
-
-                <div class="ide-section">
-                    <h3>Topik Obrolan Deep Talk</h3>
-                    <ul>
-                        <li><strong>Apresiasi:</strong> <em>"Apa momen paling berkesan atau lucu yang pernah kita lewati bersama?"</em></li>
-                        <li><strong>Impian:</strong> <em>"Apa target terbesar kamu dalam 1–2 tahun ke depan, dan gimana cara aku dukung kamu?"</em></li>
-                        <li><strong>Evaluasi:</strong> <em>"Hal kecil apa dari keseharian kita yang ingin kamu tingkatkan biar makin nyaman?"</em></li>
-                        <li><strong>Kenyamanan:</strong> <em>"Bagaimana cara terbaik memperlakukanmu saat kamu sedang merasa lelah?"</em></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Layar Rundown Poster -->
+    <!-- 2. LAYAR RUNDOWN POSTER -->
     <div id="rundown-screen" class="poster-container hidden">
         <div class="poster-card">
             <header class="header">
@@ -102,22 +71,24 @@
                     <div class="event-desc">Playing Mobile Legends</div>
                 </li>
                 
-                <!-- Item Interaktif: Munculkan Modal Ide -->
-                <li id="btn-smart-game" class="schedule-item green clickable-item" title="Klik untuk melihat rekomendasi">
+                <!-- Pindah ke Halaman Baru Smart Game / Deep Talk -->
+                <li id="btn-smart-game" class="schedule-item green clickable-item" title="Klik untuk membuka halaman rekomendasi">
                     <div class="time-badge">23:00 – 23:30</div>
                     <div class="event-desc">
                         Smart Game / Deep Talk 
-                        <span class="click-hint">👆 Klik untuk ide</span>
+                        <span class="click-hint">👆 Buka Ide</span>
                     </div>
                 </li>
 
-                <!-- Item Interaktif: Buka Link Eksternal -->
-                <li id="btn-adult-films" class="schedule-item purple clickable-item" title="Klik untuk membuka link">
-                    <div class="time-badge">23:30 – 00:00</div>
-                    <div class="event-desc">
-                        Watching Adult Films 
-                        <span class="click-hint">🔗 Buka Link</span>
-                    </div>
+                <!-- Langsung ke Link CroxyProxy -->
+                <li>
+                    <a href="https://www.croxyproxy.com/" target="_blank" rel="noopener noreferrer" class="schedule-item purple clickable-item link-item">
+                        <div class="time-badge">23:30 – 00:00</div>
+                        <div class="event-desc">
+                            Watching Adult Films 
+                            <span class="click-hint">🔗 Buka Link</span>
+                        </div>
+                    </a>
                 </li>
             </ul>
 
@@ -125,6 +96,38 @@
                 <span>Muhammad Firdaus Sultana</span>
                 <span>Virda Wati</span>
             </footer>
+        </div>
+    </div>
+
+    <!-- 3. HALAMAN BARU: SMART GAME & DEEP TALK -->
+    <div id="ide-screen" class="poster-container hidden">
+        <div class="poster-card ide-page-card">
+            <!-- Tombol Kembali -->
+            <button id="btn-back-rundown" class="btn-back">← Kembali ke Rundown</button>
+
+            <header class="ide-header">
+                <h2>🎮 Smart Game &<br>💬 Deep Talk</h2>
+                <p>Pilih permainan atau topik obrolan di bawah ini</p>
+            </header>
+
+            <div class="ide-section">
+                <h3>Rekomendasi Smart Game</h3>
+                <ul>
+                    <li><strong>Trivia Hubungan:</strong> Tebak 5–10 fakta tentang satu sama lain. Yang kalah wajib menuruti 1 permintaan kecil dari yang menang.</li>
+                    <li><strong>Tebak Kata / Charades Kilat:</strong> Tebak kata lewat gerakan tanpa suara secara bergantian dalam waktu 60 detik.</li>
+                    <li><strong>Kuis Fun Facts:</strong> Saling melempar teka-teki logika pendek atau pertanyaan pengetahuan unik.</li>
+                </ul>
+            </div>
+
+            <div class="ide-section green-section">
+                <h3>Topik Obrolan Deep Talk</h3>
+                <ul>
+                    <li><strong>Apresiasi:</strong> <em>"Apa momen paling berkesan atau lucu yang pernah kita lewati bersama?"</em></li>
+                    <li><strong>Impian:</strong> <em>"Apa target terbesar kamu dalam 1–2 tahun ke depan, dan gimana cara aku dukung kamu?"</em></li>
+                    <li><strong>Evaluasi:</strong> <em>"Hal kecil apa dari keseharian kita yang ingin kamu tingkatkan biar makin nyaman?"</em></li>
+                    <li><strong>Kenyamanan:</strong> <em>"Bagaimana cara terbaik memperlakukanmu saat kamu sedang merasa lelah atau penat?"</em></li>
+                </ul>
+            </div>
         </div>
     </div>
 
