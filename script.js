@@ -20,15 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Membuka Modal Video Full saat Teks/Font Diklik
+    // Membuka Modal & Memutar Video
     if (btnFullVideo && videoModal && modalVideo) {
         btnFullVideo.addEventListener('click', () => {
             videoModal.classList.remove('hidden');
-            modalVideo.play().catch(err => console.log("Autoplay dicegah:", err));
+            modalVideo.load();
+            modalVideo.play().catch(err => {
+                console.log("Pemutaran otomatis dibatasi browser, aktifkan kontrol manual:", err);
+            });
         });
     }
 
-    // Menutup Modal Video (Tombol X)
+    // Menutup Modal & Menghentikan Video
     if (closeModal && videoModal && modalVideo) {
         closeModal.addEventListener('click', () => {
             videoModal.classList.add('hidden');
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Menutup Modal jika mengklik area gelap di luar kotak video
+    // Menutup Modal jika mengklik area gelap di luar video
     if (videoModal && modalVideo) {
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
