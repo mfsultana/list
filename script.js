@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mengambil elemen dari HTML
     const introScreen = document.getElementById('intro-screen');
     const rundownScreen = document.getElementById('rundown-screen');
     const btnMasuk = document.getElementById('btn-masuk');
@@ -9,23 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
     const modalVideo = document.getElementById('modal-video');
 
-    // Transisi Tombol Masuk (Intro -> Rundown dengan efek halus)
+    // Transisi Tombol Masuk
     if (btnMasuk && introScreen && rundownScreen) {
         btnMasuk.addEventListener('click', () => {
-            // Berikan kelas animasi keluar
             introScreen.classList.add('fade-out');
-
-            // Tunggu animasi selesai (600ms), lalu sembunyikan intro & tampilkan rundown
             setTimeout(() => {
                 introScreen.classList.add('hidden');
                 introScreen.classList.remove('fade-out');
-
                 rundownScreen.classList.remove('hidden');
             }, 600);
         });
     }
 
-    // Logika Modal Video Full
+    // Membuka Modal Video Full
     if (btnFullVideo && videoModal && modalVideo) {
         btnFullVideo.addEventListener('click', () => {
             videoModal.classList.remove('hidden');
@@ -33,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Menutup Modal Video (Tombol X)
     if (closeModal && videoModal && modalVideo) {
         closeModal.addEventListener('click', () => {
             videoModal.classList.add('hidden');
@@ -41,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Menutup modal jika area gelap di luar video diklik
+    // Menutup Modal jika mengklik area gelap di luar video
     if (videoModal && modalVideo) {
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
