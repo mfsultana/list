@@ -46,15 +46,15 @@ body {
 }
 
 /* =========================================
-   3. LAYAR INTRO & PENEMPATAN TEKS DI SAMPING
+   3. LAYAR INTRO (POSISI DI TENGAH)
    ========================================= */
 .intro-container {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 5%;
+    justify-content: center; /* Di tengah secara horizontal */
+    align-items: center;     /* Di tengah secara vertikal */
+    padding-left: 0;
     transition: opacity 0.6s ease, transform 0.6s ease;
     opacity: 1;
 }
@@ -65,17 +65,17 @@ body {
     pointer-events: none;
 }
 
-/* Wrapper menyandingkan kartu utama dan teks video di area kotak merah */
 .intro-wrapper {
     display: flex;
+    flex-direction: column;  /* Kartu di atas, tombol video di bawahnya */
     align-items: center;
-    gap: 40px; /* Jarak antara kartu putih dan teks video */
-    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .intro-card {
     width: 100%;
-    max-width: 400px;
     background-color: #ffffff;
     border-radius: 35px;
     padding: 40px 30px;
@@ -135,59 +135,47 @@ body {
     box-shadow: 0 8px 20px rgba(207, 255, 4, 0.4);
 }
 
-/* --- TAMPILAN FONT/TEKS INTERAKTIF DI KOTAK MERAH --- */
+/* Tombol Teks Video Interaktif di Bawah Kartu */
 .interactive-video-text {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     cursor: pointer;
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 14px 24px;
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
-    border: 2px solid rgba(181, 126, 220, 0.5);
+    border: 2px solid rgba(181, 126, 220, 0.6);
     border-radius: 30px;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
 .interactive-video-text .play-icon {
     background-color: #CFFF04;
     color: #222;
-    width: 38px;
-    height: 38px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: bold;
     box-shadow: 0 0 15px rgba(207, 255, 4, 0.6);
-    transition: transform 0.3s ease;
 }
 
 .interactive-video-text .text-glow {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: 0.5px;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(181, 126, 220, 0.6);
-    transition: color 0.3s ease;
 }
 
-/* Efek Hover Saat Kursor Diarahkan ke Teks */
 .interactive-video-text:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     border-color: #CFFF04;
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.interactive-video-text:hover .play-icon {
-    transform: scale(1.15) rotate(10deg);
-}
-
-.interactive-video-text:hover .text-glow {
-    color: #CFFF04;
+    transform: scale(1.03);
 }
 
 /* =========================================
@@ -301,3 +289,68 @@ body {
 
 .schedule-item.purple {
     background-color: #B57EDC;
+    color: #ffffff;
+}
+
+.schedule-item.green {
+    background-color: #CFFF04;
+    color: #222;
+}
+
+.time-badge {
+    background-color: #ffffff;
+    color: #222;
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-weight: 800;
+    margin-right: 20px;
+    min-width: 140px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.event-desc {
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    color: #222;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   6. RESPONSIVITAS (MOBILE)
+   ========================================= */
+@media (max-width: 600px) {
+    .poster-card,
+    .intro-card {
+        padding: 40px 25px;
+    }
+
+    .title h1 {
+        font-size: 3.5rem;
+    }
+
+    .event-details,
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .schedule-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .time-badge {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
