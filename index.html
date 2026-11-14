@@ -46,9 +46,38 @@
             <span id="close-modal" class="close-btn">&times;</span>
             <div class="modal-content">
                 <video controls id="modal-video">
-                    <source src="VID-20260419-WA0027.mp4" type="video/mp4">
+                    <source src="video-kalian.mp4" type="video/mp4">
                     Browser Anda tidak mendukung pemutaran video.
                 </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Rekomendasi Smart Game & Deep Talk -->
+    <div id="ide-modal" class="video-modal hidden">
+        <div class="modal-box ide-modal-box">
+            <span id="close-ide-modal" class="close-btn">&times;</span>
+            <div class="ide-content">
+                <h2>🎮 Smart Game & 💬 Deep Talk</h2>
+                
+                <div class="ide-section">
+                    <h3>Rekomendasi Smart Game</h3>
+                    <ul>
+                        <li><strong>Trivia Hubungan:</strong> Tebak 5–10 fakta tentang satu sama lain. Yang kalah wajib menuruti 1 permintaan kecil.</li>
+                        <li><strong>Tebak Kata / Charades Kilat:</strong> Tebak kata lewat gerakan tanpa suara secara bergantian.</li>
+                        <li><strong>Kuis Fun Facts:</strong> Saling lempar teka-teki logika pendek atau pengetahuan unik.</li>
+                    </ul>
+                </div>
+
+                <div class="ide-section">
+                    <h3>Topik Obrolan Deep Talk</h3>
+                    <ul>
+                        <li><strong>Apresiasi:</strong> <em>"Apa momen paling berkesan atau lucu yang pernah kita lewati bersama?"</em></li>
+                        <li><strong>Impian:</strong> <em>"Apa target terbesar kamu dalam 1–2 tahun ke depan, dan gimana cara aku dukung kamu?"</em></li>
+                        <li><strong>Evaluasi:</strong> <em>"Hal kecil apa dari keseharian kita yang ingin kamu tingkatkan biar makin nyaman?"</em></li>
+                        <li><strong>Kenyamanan:</strong> <em>"Bagaimana cara terbaik memperlakukanmu saat kamu sedang merasa lelah?"</em></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -63,7 +92,7 @@
             </header>
 
             <div class="event-details">
-                <span>14 November 2026</span>
+                <span>23 Mei 2026</span>
                 <span>Mulai jam 22:00</span>
             </div>
 
@@ -72,13 +101,23 @@
                     <div class="time-badge">22:00 – 23:00</div>
                     <div class="event-desc">Playing Mobile Legends</div>
                 </li>
-                <li class="schedule-item green">
+                
+                <!-- Item Interaktif: Munculkan Modal Ide -->
+                <li id="btn-smart-game" class="schedule-item green clickable-item" title="Klik untuk melihat rekomendasi">
                     <div class="time-badge">23:00 – 23:30</div>
-                    <div class="event-desc">Smart Game / Deep Talk</div>
+                    <div class="event-desc">
+                        Smart Game / Deep Talk 
+                        <span class="click-hint">👆 Klik untuk ide</span>
+                    </div>
                 </li>
-                <li class="schedule-item purple">
+
+                <!-- Item Interaktif: Buka Link Eksternal -->
+                <li id="btn-adult-films" class="schedule-item purple clickable-item" title="Klik untuk membuka link">
                     <div class="time-badge">23:30 – 00:00</div>
-                    <div class="event-desc">Watching Adult Films</div>
+                    <div class="event-desc">
+                        Watching Adult Films 
+                        <span class="click-hint">🔗 Buka Link</span>
+                    </div>
                 </li>
             </ul>
 
