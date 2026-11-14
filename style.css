@@ -55,13 +55,13 @@ body {
     justify-content: center;
     align-items: center;
     padding-left: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     opacity: 1;
 }
 
-.intro-container.fade-out {
-    opacity: 0;
-    transform: scale(0.95) translateY(-20px);
+.fade-out {
+    opacity: 0 !important;
+    transform: scale(0.95) translateY(-15px) !important;
     pointer-events: none;
 }
 
@@ -177,7 +177,7 @@ body {
 }
 
 /* =========================================
-   4. MODAL VIDEO & MODAL IDE SMART GAME
+   4. MODAL VIDEO FULL
    ========================================= */
 .video-modal {
     position: fixed;
@@ -185,7 +185,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.88);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,66 +209,14 @@ body {
     display: block;
 }
 
-/* Styling khusus untuk Modal Ide Smart Game / Deep Talk */
-.ide-modal-box {
-    background: #ffffff;
-    color: #222;
-    max-width: 600px;
-    padding: 35px 30px;
-    max-height: 85vh;
-    overflow-y: auto;
-}
-
-.ide-content h2 {
-    font-size: 1.6rem;
-    font-weight: 900;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #222;
-}
-
-.ide-section {
-    margin-bottom: 20px;
-    background: #f8f6fb;
-    padding: 18px 20px;
-    border-radius: 18px;
-    border-left: 5px solid #B57EDC;
-}
-
-.ide-section:last-child {
-    margin-bottom: 0;
-    background: #f7ffe0;
-    border-left-color: #a8d400;
-}
-
-.ide-section h3 {
-    font-size: 1.15rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.ide-section ul {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.ide-section li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #444;
-}
-
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: -15px;
+    right: -15px;
     background: #ff4757;
     color: white;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -287,28 +235,28 @@ body {
 }
 
 /* =========================================
-   5. LAYAR RUNDOWN POSTER & ITEM KLIK
+   5. LAYAR RUNDOWN POSTER & TAUTAN
    ========================================= */
 .poster-container {
     width: 100%;
     max-width: 650px;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     opacity: 1;
 }
 
 .poster-card {
     background-color: #ffffff;
     border-radius: 40px;
-    padding: 60px 50px;
+    padding: 55px 45px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .header {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .title h1 {
-    font-size: 5rem;
+    font-size: 4.8rem;
     font-weight: 900;
     line-height: 0.9;
     color: #222;
@@ -326,7 +274,7 @@ body {
 
 .schedule-list {
     list-style: none;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .schedule-item {
@@ -338,7 +286,10 @@ body {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Efek interaktif untuk item jadwal yang bisa diklik */
+.link-item {
+    text-decoration: none;
+}
+
 .clickable-item {
     cursor: pointer;
 }
@@ -395,16 +346,102 @@ body {
 }
 
 /* =========================================
-   6. RESPONSIVITAS (MOBILE)
+   6. HALAMAN SMART GAME & DEEP TALK
+   ========================================= */
+.ide-page-card {
+    padding: 40px 40px;
+}
+
+.btn-back {
+    background-color: #222;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+    background-color: #B57EDC;
+    transform: translateX(-4px);
+}
+
+.ide-header {
+    margin-bottom: 25px;
+}
+
+.ide-header h2 {
+    font-size: 2.3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.ide-header p {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.ide-section {
+    margin-bottom: 20px;
+    background: #f6f2fa;
+    padding: 20px 22px;
+    border-radius: 20px;
+    border-left: 6px solid #B57EDC;
+}
+
+.ide-section.green-section {
+    margin-bottom: 0;
+    background: #f5ffd6;
+    border-left-color: #a8d400;
+}
+
+.ide-section h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.ide-section ul {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ide-section li {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #333;
+}
+
+/* =========================================
+   7. RESPONSIVITAS (MOBILE)
    ========================================= */
 @media (max-width: 600px) {
     .poster-card,
-    .intro-card {
-        padding: 40px 25px;
+    .intro-card,
+    .ide-page-card {
+        padding: 35px 25px;
     }
 
     .title h1 {
-        font-size: 3.5rem;
+        font-size: 3.4rem;
+    }
+
+    .ide-header h2 {
+        font-size: 1.8rem;
     }
 
     .event-details,
