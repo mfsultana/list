@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Talk Rundown - Firdaus & Virda</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Poppins & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,29 +20,36 @@
 
     <!-- Layar Intro -->
     <div id="intro-screen" class="intro-container">
-        <div class="intro-card">
-            <div class="photo-frame">
-                <img src="IMG-20260419-WA0016.jpg" alt="Foto Kami">
-            </div>
+        <div class="intro-wrapper">
+            <!-- Kotak Kartu Utama -->
+            <div class="intro-card">
+                <div class="photo-frame">
+                    <img src="S&V.jpeg" alt="Foto Kami">
+                </div>
+                <h2>Are You Ready?</h2>
+                <p>Firdaus & Virda</p>
 
-            <h2>Are You Ready?</h2>
-            <p>Firdaus & Virda</p>
-
-            <div class="button-group">
+                <!-- Tombol Masuk di dalam kartu -->
                 <button id="btn-masuk" class="btn-masuk">Lihat Rundown</button>
-                <button id="btn-full-video" class="btn-full">Lihat Video Full</button>
             </div>
+
+            <!-- Tombol Lihat Video Full di Luar/Samping Kontainer -->
+            <button id="btn-full-video" class="btn-external-video">
+                <span>▶</span> Lihat Video Full
+            </button>
         </div>
     </div>
 
-    <!-- Modal Video Full -->
+    <!-- Modal Video Full (Diperbaiki z-index nya agar tampil paling atas) -->
     <div id="video-modal" class="video-modal hidden">
-        <div class="modal-content">
+        <div class="modal-box">
             <span id="close-modal" class="close-btn">&times;</span>
-            <video controls id="modal-video">
-                <source src="video-kalian.mp4" type="video/mp4">
-                Browser Anda tidak mendukung pemutaran video.
-            </video>
+            <div class="modal-content">
+                <video controls id="modal-video">
+                    <source src="video-kalian.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video.
+                </video>
+            </div>
         </div>
     </div>
 
