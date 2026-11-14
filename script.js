@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Elemen Layar Utama
     const introScreen = document.getElementById('intro-screen');
     const rundownScreen = document.getElementById('rundown-screen');
+    const ideScreen = document.getElementById('ide-screen');
+
+    // Tombol Navigasi Layar
     const btnMasuk = document.getElementById('btn-masuk');
+    const btnSmartGame = document.getElementById('btn-smart-game');
+    const btnBackRundown = document.getElementById('btn-back-rundown');
 
     // Elemen Modal Video Full
     const btnFullVideo = document.getElementById('btn-full-video');
@@ -9,25 +15,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('close-modal');
     const modalVideo = document.getElementById('modal-video');
 
-    // Elemen Interaktif Rundown
-    const btnSmartGame = document.getElementById('btn-smart-game');
-    const ideModal = document.getElementById('ide-modal');
-    const closeIdeModal = document.getElementById('close-ide-modal');
-    const btnAdultFilms = document.getElementById('btn-adult-films');
+    // Fungsi Helper untuk Perpindahan Layar Halus
+    function switchScreen(fromScreen, toScreen) {
+        if (!fromScreen || !toScreen) return;
+        fromScreen.classList.add('fade-out');
+        setTimeout(() => {
+            fromScreen.classList.add('hidden');
+            fromScreen.classList.remove('fade-out');
+            toScreen.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 500);
+    }
 
-    // 1. Transisi Tombol Masuk (Intro -> Rundown)
-    if (btnMasuk && introScreen && rundownScreen) {
+    // 1. Intro -> Rundown
+    if (btnMasuk) {
         btnMasuk.addEventListener('click', () => {
-            introScreen.classList.add('fade-out');
-            setTimeout(() => {
-                introScreen.classList.add('hidden');
-                introScreen.classList.remove('fade-out');
-                rundownScreen.classList.remove('hidden');
-            }, 600);
+            switchScreen(introScreen, rundownScreen);
         });
     }
 
-    // 2. Membuka & Menutup Modal Video Full
+    // 2. Rundown -> Halaman Baru Smart Game / Deep Talk
+    if (btnSmartGame) {
+        btnSmartGame.addEventListener('click', () => {
+            switchScreen(rundownScreen, ideScreen);
+        });
+    }
+
+    // 3. Tombol Kembali: Halaman Smart Game -> Rundown
+    if (btnBackRundown) {
+        btnBackRundown.addEventListener('click', () => {
+            switchScreen(ideScreen, rundownScreen);
+        });
+    }
+
+    // 4. Modal Video Full
     if (btnFullVideo && videoModal && modalVideo) {
         btnFullVideo.addEventListener('click', () => {
             videoModal.classList.remove('hidden');
@@ -53,34 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalVideo.pause();
                 modalVideo.currentTime = 0;
             }
-        });
-    }
-
-    // 3. Klik Smart Game / Deep Talk -> Buka Modal Rekomendasi
-    if (btnSmartGame && ideModal) {
-        btnSmartGame.addEventListener('click', () => {
-            ideModal.classList.remove('hidden');
-        });
-    }
-
-    if (closeIdeModal && ideModal) {
-        closeIdeModal.addEventListener('click', () => {
-            ideModal.classList.add('hidden');
-        });
-    }
-
-    if (ideModal) {
-        ideModal.addEventListener('click', (e) => {
-            if (e.target === ideModal) {
-                ideModal.classList.add('hidden');
-            }
-        });
-    }
-
-    // 4. Klik Watching Adult Films -> Buka CroxyProxy di tab baru
-    if (btnAdultFilms) {
-        btnAdultFilms.addEventListener('click', () => {
-            window.open('https://www.croxyproxy.com/', '_blank', 'noopener,noreferrer');
         });
     }
 });
